@@ -1,0 +1,137 @@
+.site-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-bar {
+  background-color: var(--primary);
+  color: white;
+  padding: 8px 0;
+  font-size: 13px;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-bar-link {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 2px 12px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.top-bar-link:hover {
+  background: white;
+  color: var(--primary);
+}
+
+.main-header {
+  background: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-main {
+  font-size: 26px;
+  font-weight: 800;
+  color: #F37021;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.logo-sub {
+  font-size: 11px;
+  color: var(--primary);
+  text-transform: lowercase;
+  letter-spacing: 1.5px;
+  margin-top: 2px;
+}
+
+.logo-brand {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 4px;
+}
+
+.brand-name {
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: var(--transition);
+  display: block;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  .top-bar .container {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
