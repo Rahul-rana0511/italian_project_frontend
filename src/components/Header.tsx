@@ -39,6 +39,7 @@ const Header: React.FC = () => {
             <img src="/logo.svg" alt="AMEI Logo" className="logo-image" />
           </Link>
           
+          
           <nav className={`main-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <ul className="nav-menu">
               {categories.map((cat) => (
