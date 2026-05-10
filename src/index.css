@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,13 +8,13 @@
 
 
 :root {
-  --primary: #0B4575; /* User specified header blue */
-  --secondary: #A39268;
+  --primary: #004a99; /* Deep Professional Blue */
+  --secondary: #F37021; /* Branding Orange */
   --accent: #D2691E;
-  --footer-bg: rgb(37, 39, 46); /* User specified footer background */
-  --background: #F5F5F7;
-  --text-main: #1A1A1A;
-  --text-muted: #666666;
+  --footer-bg: rgb(37, 39, 46);
+  --background: #F8FAFC;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
   --glass: rgba(255, 255, 255, 0.7);
   --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -24,7 +26,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: var(--background);
   color: var(--text-main);
   line-height: 1.6;
@@ -32,7 +34,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   color: var(--primary);
 }
