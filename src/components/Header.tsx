@@ -33,13 +33,14 @@ const Header: React.FC = () => {
         </div>
       </div>
       
+      
       <div className="main-header">
         <div className="container">
           <Link to="/" className="logo-container">
             <img src="/logo.svg" alt="AMEI Logo" className="logo-image" />
           </Link>
           
-          
+
           <nav className={`main-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <ul className="nav-menu">
               {categories.map((cat) => (
