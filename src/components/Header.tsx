@@ -1,43 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
+import { useLanguage } from '../context/LanguageContext';
 
 const Header: React.FC = () => {
+  const { language, setLanguage, t } = useLanguage();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const categories = [
+    'about',
+    'immigration',
+    'caf',
+    'training',
+    'business',
+    'insurance',
+    'indianConsulate',
+    'visas',
+    'other'
+  ];
+
   return (
     <header className="site-header">
       <div className="top-bar">
         <div className="container">
-          <div className="top-bar-content">
-            <span className="top-bar-text">Start your business with us and write your story!</span>
-            <a href="#" className="top-bar-link">Find out more</a>
+          <div className="top-bar-left">
+            <span className="top-bar-text">{t('topBar.story')}</span>
+            <a href="#" className="top-bar-link">{t('topBar.more')}</a>
           </div>
-          <div className="top-bar-content">
-            <span className="top-bar-text">Find the location closest to you</span>
-            <a href="#" className="top-bar-link">Go to the page</a>
+          <div className="top-bar-right">
+            <div id="google_translate_element"></div>
           </div>
         </div>
       </div>
       
       <div className="main-header">
         <div className="container">
-          <div className="logo-container">
-            <div className="logo-main">MOVING PEOPLE</div>
-            <div className="logo-sub">bridging international boundaries</div>
-            <div className="logo-brand">
-              by <span className="brand-name">Gruppo Europa</span>
-            </div>
-          </div>
+          <Link to="/" className="logo-container">
+            <img src="/logo.svg" alt="AMEI Logo" className="logo-image" />
+          </Link>
           
-          <nav className="main-nav">
+          <nav className={`main-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <ul className="nav-menu">
-              <li><a href="#" className="nav-link active">WHO WE ARE</a></li>
-              <li><a href="#" className="nav-link">MIGRANTS</a></li>
-              <li><a href="#" className="nav-link">TRAVELERS</a></li>
-              <li><a href="#" className="nav-link">FAMILIES</a></li>
-              <li><a href="#" className="nav-link">COMPANIES</a></li>
-              <li><a href="#" className="nav-link">LOANS AND FINANCING</a></li>
-              <li><a href="#" className="nav-link">OTHER SERVICES</a></li>
+              {categories.map((cat) => (
+                <li key={cat} className={`nav-item ${cat !== 'about' ? 'has-dropdown' : ''}`}>
+                  {cat === 'about' ? (
+                    <Link to="/chi-siamo" className="nav-link">
+                      {t(`nav.${cat}`)}
+                    </Link>
+                  ) : (
+                    <>
+                      <a href="#" className="nav-link">
+                        {t(`nav.${cat}`)}
+                        <span className="dropdown-arrow">▼</span>
+                      </a>
+                      <div className="dropdown-menu">
+                        <div className="dropdown-header">
+                          {t(`nav.${cat}`)}
+                        </div>
+                        <ul className="dropdown-list">
+                          {t(`services.${cat}`) && t(`services.${cat}`).map((item: string, idx: number) => (
+                            <li key={idx}>
+                              <a href="#" className="dropdown-link">{item}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </>
+                  )}
+                </li>
+              ))}
             </ul>
-            <div className="mobile-menu-toggle">
+            <div 
+              className="mobile-menu-toggle"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
               <span></span>
               <span></span>
               <span></span>
