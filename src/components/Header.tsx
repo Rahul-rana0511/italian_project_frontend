@@ -4,7 +4,7 @@ import './Header.css';
 import { useLanguage } from '../context/LanguageContext';
 
 const Header: React.FC = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const categories = [
@@ -38,6 +38,7 @@ const Header: React.FC = () => {
           <Link to="/" className="logo-container">
             <img src="/logo.svg" alt="AMEI Logo" className="logo-image" />
           </Link>
+          
           
           <nav className={`main-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <ul className="nav-menu">

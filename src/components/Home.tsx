@@ -1,9 +1,7 @@
 import React from 'react';
 import '../App.css';
-import { useLanguage } from '../context/LanguageContext';
 
 const Home: React.FC = () => {
-  const { t } = useLanguage();
 
   return (
     <>
