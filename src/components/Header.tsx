@@ -4,7 +4,7 @@ import './Header.css';
 import { useLanguage } from '../context/LanguageContext';
 
 const Header: React.FC = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const categories = [
