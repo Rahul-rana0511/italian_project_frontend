@@ -173,7 +173,7 @@
   top: 100%;
   left: 0;
   transform: translateY(10px);
-  width: 360px; /* Reduced width for a sleeker look */
+  width: 300px; /* Reduced width for a sleeker look */
   background: white;
   box-shadow: var(--dropdown-shadow);
   opacity: 0;
@@ -263,7 +263,6 @@
 @media (max-width: 1200px) {
   .logo-main { font-size: 18px; }
   .nav-link { font-size: 9px; padding: 10px 2px; }
-  .dropdown-menu { width: 480px; }
 }
 
 @media (max-width: 1024px) {
