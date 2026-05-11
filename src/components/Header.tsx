@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             <a href="#" className="top-bar-link">{t('topBar.more')}</a>
           </div>
           <div className="top-bar-right">
-            <div id="google_translate_element"></div>
+            {/* Removed inline Google Translate element; rely on browser's translation UI */}
           </div>
         </div>
       </div>
